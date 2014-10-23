@@ -72,7 +72,7 @@ Items
 
 An item refers to a single item of data scraped from the target website. A common example of an item would be a product for sale on an e-commerce website. It's important to differentiate **item** and **item definition**; in Portia an item definition or item type refers to the schema of an item rather than the item itself. For example, ``book`` would be an item definition, and a specific book scraped from the website would be an item. An item definition consists of multiple fields, so using the example of a product you might have fields named ``name``, ``price``, ``manufacturer`` and so on. Annotations are used to extract data from the page into each of these fields.
 
-If you want to ensure that certain fields are extracted for an item, you can set the **Required** flag on a field which will discard an item if the field is missing. In many cases, it's possible to have fields whose value can differ on other pages despite being the same item. To ensure duplicate items with differing field values aren't seen as separate, you can enable **Vary** on the relevant fields and they will be ignored when evaluating whether the item is unique or not.
+If you want to ensure that certain fields are extracted for an item, you can set the **Required** flag on a field which will discard an item if the field is missing. Duplicate items are removed by default. In some cases you may have fields where the value can vary despite being the same item, in which case you can mark them as **Vary** which will ignore the field when checking for duplicates. It’s important to only use **Vary** when necessary, as misuse could easily lead to duplicate items being stored. The ``url`` field is a good example of where **Vary** is useful, as the same item may have multiple URLs. If the ``url`` field wasn’t marked as **Vary** each duplicate item would be seen as unique because its URL would be different.
 
 Creating a Portia Project
 =========================
@@ -84,7 +84,7 @@ To create a new project, begin by entering the site's URL in the navigation bar 
     
     Newly created project
 
-On the right you have the ability to configure the spider. The start pages are the URLs first visited by the spider when beginning a new crawl, and you can configure the spiders link following behaviour under crawling. By default, the first start URL will be set to the URL you entered when creating the project. Portia can be used as a web browser, and you can navigate to pages you want to extract data from and create templates for each of them. Once you have found a page you wish to extract data from, you can begin defining the data you want to extract by clicking the red button labelled ``Annotate this page`` at the top of the screen. This creates a new template for the page and allows you to begin annotating. 
+The spider can be configured on the right. The start pages are the URLs the spider will visit when beginning a new crawl. Portia can be used as a web browser, and you can navigate to the pages you want to extract data from and create new templates. To define the data you wish to extract from the page, click the ``Annotate this page`` button, which will create a new template and allow you to annotate the page.
 
 .. figure:: _static/portia-annotation.png
     :align: center
