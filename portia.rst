@@ -91,7 +91,7 @@ On the right you have the ability to configure the spider. The start pages are t
     
     Annotating the page
 
-You will now be able to highlight and click elements on the web page that you wish to extract. When you click an item, a context menu appears allowing you to map an element's attribute or content to a particular field. The field drop down allows you to select the item field you're mapping to. Should you want to add a new item field, you can use ``-create new-`` to create a new field to save you having to go into the item editor. You'll also notice in the field drop down that there is a ``-just required-`` option. If this option is selected, the element will need to exist on the page in order for an item to be extracted. It's important to note that the content within the element can vary, and only the existence of the element will be taken into account. 
+You will now be able to define annotations by highlighting or clicking elements on the page. When annotating, a context menu will appear allowing you to map an element's attribute or content to a particular item field. Should you want to add a new item field without having to go into the item editor, you can use the ``-create new-`` option in the field drop down to create a new field. If you want to mark an element as having to exist on the page without storing its data, you can select ``-just required-`` instead of a field. It's important to note when using ``-just required-``, only the existence of the element will be checked rather than its content.
 
 .. figure:: _static/portia-item-editor.png
     :height: 1168
