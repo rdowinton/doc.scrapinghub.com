@@ -124,7 +124,9 @@ It's possible to extract multiple fields using a single annotation if there are 
 Variants
 --------
 
-Variants are useful if there are multiple variations of each item you're scraping. By default, annotations use the ``Base`` variant which refers to the base item. If all annotations are assigned to the base item, only a single item will be generated upon extraction. This is the most common scenario, but consider the following:
+It’s common for there to be a single item with a number of variations e.g. different sizes such as small, medium and large. It’s likely that each variation will have its own annotation for one or more fields and you want to keep each variation’s value. In situations like this you can use variants to make sure each value is stored. Each annotation you define has a variant selected, the default being ``Base`` referring to the base item. To assign an annotation to a variant, you simply select the variant you want the annotation to use in its options or under the ``Annotations`` section in the template settings.
+
+Consider the following scenario where variants would be useful:
 
 You are wanting to scrape an e-commerce website that sells beds, and some beds come in multiple sizes e.g. ``Single``, ``Double``, ``Queen``, ``King``. The product page for each bed has a table of prices for each size, like so:
 
