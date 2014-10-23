@@ -22,18 +22,9 @@ A spider is a crawler for a particular website. The configuration of a spider is
     * **Crawling**
     * **Extraction**
 
-The **Initialize** section is used to set up the spider when it's first launched. The start pages are the first URLs the spider will visit to begin crawling. There is also the ability to set login credentials if the website you're crawling requires authentication.
+The **Initialize** section is used to set up the spider when it's first launched. Here you can define the start URLs and login credentials.
 
-The **Crawling** section is used to configure how the spider will behave when encountering a new URL. There are three main options to choose from:
-
-    * **Follow all in-domain links** - follow any links that match the website's domain.
-    * **Don't follow links** - don't follow any links: use this if you're only extracting data from your start pages.
-    * **Configure follow and exclude patterns** - when selected you will be able to define which links to follow and which to exclude based on regular expressions.
-
-Other settings include:
-
-    * **Respect nofollow** - if this is checked then the spider won't follow any links whose ``rel`` attribute is set to ``nofollow``.
-    * **Overlay blocked links** - if this is enabled, Portia will highlight followed links in green and non-followed links in red on pages. It's important to note that this option won't affect crawling, it's simply to allow you to visualise the effects of crawl rules on pages you're browsing with Portia.
+The **Crawling** section is used to configure how the spider will behave when it encounters URLs. You can choose how links are followed and whether to respect `nofollow <http://en.wikipedia.org/wiki/nofollow>`_. You can visualise the effects of the crawling rules using the **Overlay blocked links** option; this will highlight links that will be followed in green, and links that won't be followed in red.
 
 The **Extraction** section lists the templates for this spider.
 
